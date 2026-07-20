@@ -1,58 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# NovaMed Research Foundation
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Marketing/informational website for NovaMed Research Foundation, an independent medical research foundation. Built with Laravel 13, Blade views, and Tailwind CSS v4 (via Vite).
 
-## About Laravel
+## Stack
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- PHP 8.3+, Laravel 13
+- SQLite by default (swap to MySQL/Postgres in `.env` if preferred)
+- Tailwind CSS v4 + Vite for the frontend build
+- Plain Blade views (no JS framework) with a small vanilla-JS mobile menu toggle
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Pages
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Route | Description |
+|---|---|
+| `/` | Home |
+| `/over-ons` | Missie, visie, kernwaarden |
+| `/onderzoek` | Bedrijfsmodel, onderzoeksgebieden, onderzoeksopzet |
+| `/toekomst` | Langetermijndoelen |
+| `/contact` | Contactformulier (algemeen / donateur / vrijwilliger / partner) |
 
-## Learning Laravel
+The contact form validates input, blocks bot submissions via a honeypot field, stores each submission in the `contact_submissions` table, and emails a notification to `MAIL_FROM_ADDRESS` using the configured mailer.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Local development
 
 ```bash
-composer require laravel/boost --dev
+composer install
+npm install
 
-php artisan boost:install
+cp .env.example .env
+php artisan key:generate
+
+touch database/database.sqlite   # if using the default sqlite connection
+php artisan migrate
+
+npm run dev        # Vite dev server, in one terminal
+php artisan serve  # in another terminal
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Production deployment
 
-## Contributing
+1. **Get the code onto the server** (git pull, deploy tool, etc.) and set the document root to the `public/` directory — never expose the project root.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. **Install dependencies without dev tooling:**
+   ```bash
+   composer install --no-dev --optimize-autoloader
+   npm ci
+   npm run build
+   ```
 
-## Code of Conduct
+3. **Configure the environment.** Copy `.env.example` to `.env` and set at minimum:
+   - `APP_ENV=production`, `APP_DEBUG=false`
+   - `APP_URL` to the real domain (used for absolute URLs, e.g. in emails)
+   - `APP_KEY` — generate with `php artisan key:generate` if not already set
+   - A real database connection (`DB_CONNECTION`, `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`) if not using SQLite
+   - `MAIL_MAILER` and SMTP credentials so the contact form notification actually sends (defaults to `log`, which only writes to `storage/logs/laravel.log`)
+   - `MAIL_FROM_ADDRESS` — this is also the inbox that receives contact form notifications
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. **Run migrations:**
+   ```bash
+   php artisan migrate --force
+   ```
 
-## Security Vulnerabilities
+5. **Cache the framework for performance:**
+   ```bash
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   php artisan event:cache
+   ```
+   Re-run these (or `php artisan optimize:clear` then `php artisan optimize`) after every deploy that changes config, routes, or views.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. **Permissions:** ensure the web server user can write to `storage/` and `bootstrap/cache/`.
 
-## License
+7. **HTTPS:** terminate TLS at the load balancer/reverse proxy or web server, and set `APP_URL` to the `https://` URL so generated links and the CSRF-protected cookie behave correctly.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Notes
+
+- No admin/CMS is included — page content lives directly in the Blade views under `resources/views/pages`. Ask for a CMS/admin layer if content needs to change without a code deploy.
+- The default Laravel `users`/auth scaffolding is present but unused; no login is wired up.
