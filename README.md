@@ -81,8 +81,7 @@ Cloudflare Pages/Workers has no PHP runtime, so the Laravel app itself can't run
 **Build locally:**
 
 ```bash
-npm run build          # compiles CSS/JS into public/build
-php artisan static:build   # renders dist/ from the live routes
+npm run pages:build   # composer install + vite build + static:build, outputs dist/
 ```
 
 `dist/` is a fully static site (clean URLs, relative asset paths) that can be previewed with any static server or deployed as-is.
@@ -94,7 +93,15 @@ php artisan static:build   # renders dist/ from the live routes
 3. *(Optional)* To also email new submissions, add a [Resend](https://resend.com) API key and set `RESEND_API_KEY`, `CONTACT_NOTIFY_ADDRESS`, and `CONTACT_FROM_ADDRESS` as environment variables/secrets on the Pages project. Without these, submissions are still stored in KV, just not emailed.
 4. Add two repo secrets in GitHub (**Settings → Secrets and variables → Actions**): `CLOUDFLARE_API_TOKEN` (a token with Pages edit permission) and `CLOUDFLARE_ACCOUNT_ID`.
 
-**Deploying:** `.github/workflows/deploy.yml` builds and deploys `dist/` to Cloudflare Pages on every push to `main` (PHP is only needed in this GitHub Actions runner — never on Cloudflare's own build image). Trigger it manually from the Actions tab, or just push to `main`.
+**Deploying:** `.github/workflows/deploy.yml` builds and deploys `dist/` to Cloudflare Pages on every push to `main` (PHP is only needed in this GitHub Actions runner — never on Cloudflare's own build image).
+
+**If the Pages project is *also* connected to this repo via Cloudflare's own Git integration** (Workers & Pages → the project → you see automatic builds on every push, separate from the GitHub Actions run), it will try to build independently and fail with `Missing entry-point to Worker script or to assets directory`, because that build environment has no PHP step configured and never produces `dist/`. Either:
+
+- **Disconnect it** (Settings → Builds & deployments → Git → Disconnect) and let the GitHub Actions workflow be the only thing that deploys — the simplest option, since PHP only needs to exist in one place; or
+- **Configure it to build PHP itself**, under Settings → Builds & deployments → Build configuration:
+  - Build command: `npm run pages:build`
+  - Build output directory: `dist`
+  - Environment variable (Settings → Environment variables, both Production and Preview): `APP_KEY` — generate a value with `php artisan key:generate --show` and paste it in as a **secret**.
 
 ## Notes
 
