@@ -1,10 +1,5 @@
 name = "novamed-research-foundation"
 compatibility_date = "2026-07-01"
-pages_build_output_dir = "dist"
 
-# For local `wrangler pages dev dist` testing only. The deployed Cloudflare
-# Pages project needs its own KV binding configured in the dashboard
-# (Settings -> Functions -> KV namespace bindings) — see README.md.
-# [[kv_namespaces]]
-# binding = "CONTACT_SUBMISSIONS"
-# id = "replace-with-a-real-namespace-id"
+[assets]
+directory = "./dist"
