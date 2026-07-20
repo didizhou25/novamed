@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NovaMed Research Foundation</title>
+    <meta name="description" content="NovaMed Research Foundation voert onafhankelijk onderzoek uit naar regeneratieve geneeskunde, biofysische technologieën en gepersonaliseerde gezondheidszorg.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23fbf9f4'/%3E%3Cpath d='M23,20 Q35,33 23,46' stroke='%23206455' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3Cpath d='M55,84 C80,80 86,58 74,40 C64,55 56,60 52,73 Z' fill='%23b8935a'/%3E%3Ctext x='52' y='68' text-anchor='middle' font-family='Georgia, serif' font-weight='700' font-size='46' fill='%230b1a1c'%3EN%3C/text%3E%3C/svg%3E">
+    <link rel="preload" as="style" href="/build/assets/app-lwJGjdui.css" /><link rel="modulepreload" as="script" href="/build/assets/app-cIsAVPPR.js" /><link rel="stylesheet" href="/build/assets/app-lwJGjdui.css" /><script type="module" src="/build/assets/app-cIsAVPPR.js"></script></head>
+<body class="flex min-h-screen flex-col bg-sand-50 font-sans text-ink-900">
+
+    <div class="scroll-progress" data-scroll-progress></div>
+    <div class="grain-overlay"></div>
+
+    <header data-site-header class="sticky top-0 z-50 border-b border-ink-900/5 bg-sand-50/90 backdrop-blur">
+    <div class="container-page flex h-20 items-center justify-between">
+        <a href="/" class="group flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink-950 shadow-[0_2px_10px_-4px_rgba(11,26,28,0.25)] ring-1 ring-ink-900/8 transition-transform duration-500 group-hover:scale-110">
+                <svg class="h-4 w-4 h-6 w-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+        <linearGradient id="brandmark-dna" x1="10" y1="14" x2="46" y2="70" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#7fbba9" />
+            <stop offset="1" stop-color="#206455" />
+        </linearGradient>
+        <linearGradient id="brandmark-leaf" x1="48" y1="34" x2="88" y2="88" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#cfa96a" />
+            <stop offset="1" stop-color="#9c7a48" />
+        </linearGradient>
+    </defs>
+
+    
+    <path d="M22,15 Q35,29 22,43 Q9,57 22,71" stroke="url(#brandmark-dna)" stroke-width="3.8" stroke-linecap="round" />
+    <path d="M36,15 Q23,29 36,43 Q49,57 36,71" stroke="url(#brandmark-dna)" stroke-width="3.8" stroke-linecap="round" opacity="0.8" />
+    <line x1="22" y1="15" x2="36" y2="15" stroke="#fbf9f4" stroke-width="2.4" stroke-linecap="round" />
+    <line x1="22" y1="43" x2="36" y2="43" stroke="#fbf9f4" stroke-width="2.4" stroke-linecap="round" />
+    <line x1="22" y1="71" x2="36" y2="71" stroke="#fbf9f4" stroke-width="2.4" stroke-linecap="round" />
+
+    
+    <path
+        d="M56,86 C82,83 89,57 76,36 C65,53 56,59 51,73 C49,79 52,83 56,86 Z"
+        fill="url(#brandmark-leaf)"
+    />
+    <path d="M76,36 C65,53 56,59 51,73" stroke="#fbf9f4" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round" fill="none" />
+
+    
+    <text x="50" y="66" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="42" fill="currentColor">N</text>
+</svg>
+            </span>
+            <span class="leading-tight">
+                <span class="block font-serif text-lg font-medium tracking-tight text-ink-950">NovaMed</span>
+                <span class="block text-[0.65rem] font-semibold tracking-[0.18em] text-brand-600 uppercase">Research Foundation</span>
+            </span>
+        </a>
+
+        <nav class="hidden items-center gap-10 lg:flex">
+                            <a
+                    href="/"
+                    class="nav-link text-sm font-medium transition is-active text-ink-950"
+                >
+                    Home
+                </a>
+                            <a
+                    href="/over-ons"
+                    class="nav-link text-sm font-medium transition text-ink-700 hover:text-ink-950"
+                >
+                    Over ons
+                </a>
+                            <a
+                    href="/onderzoek"
+                    class="nav-link text-sm font-medium transition text-ink-700 hover:text-ink-950"
+                >
+                    Onderzoek
+                </a>
+                            <a
+                    href="/toekomst"
+                    class="nav-link text-sm font-medium transition text-ink-700 hover:text-ink-950"
+                >
+                    Toekomst
+                </a>
+                            <a
+                    href="/contact"
+                    class="nav-link text-sm font-medium transition text-ink-700 hover:text-ink-950"
+                >
+                    Contact
+                </a>
+                    </nav>
+
+        <div class="hidden lg:block">
+            <a
+                href="/contact?type=donateur"
+                class="btn-shine inline-flex items-center rounded-full bg-ink-950 px-5 py-2.5 text-sm font-semibold text-sand-50 transition hover:bg-brand-800"
+            >
+                Steun het onderzoek
+            </a>
+        </div>
+
+        <button
+            type="button"
+            data-menu-toggle
+            aria-expanded="false"
+            aria-label="Menu openen"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-ink-900/10 lg:hidden"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ink-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+                <path class="menu-line menu-line-top" stroke-linecap="round" d="M3.75 6.75h16.5" />
+                <path class="menu-line menu-line-mid" stroke-linecap="round" d="M3.75 12h16.5" />
+                <path class="menu-line menu-line-bottom" stroke-linecap="round" d="M3.75 17.25h16.5" />
+            </svg>
+        </button>
+    </div>
+
+    <div data-mobile-menu class="hidden flex-col gap-1 border-t border-ink-900/5 bg-sand-50 px-6 pb-6 pt-2 lg:hidden">
+                    <a
+                href="/"
+                class="rounded-lg px-3 py-3 text-sm font-medium bg-ink-900/5 text-ink-950"
+            >
+                Home
+            </a>
+                    <a
+                href="/over-ons"
+                class="rounded-lg px-3 py-3 text-sm font-medium text-ink-700"
+            >
+                Over ons
+            </a>
+                    <a
+                href="/onderzoek"
+                class="rounded-lg px-3 py-3 text-sm font-medium text-ink-700"
+            >
+                Onderzoek
+            </a>
+                    <a
+                href="/toekomst"
+                class="rounded-lg px-3 py-3 text-sm font-medium text-ink-700"
+            >
+                Toekomst
+            </a>
+                    <a
+                href="/contact"
+                class="rounded-lg px-3 py-3 text-sm font-medium text-ink-700"
+            >
+                Contact
+            </a>
+                <a
+            href="/contact?type=donateur"
+            class="mt-2 inline-flex items-center justify-center rounded-full bg-ink-950 px-5 py-3 text-sm font-semibold text-sand-50"
+        >
+            Steun het onderzoek
+        </a>
+    </div>
+</header>
+
+    <main class="flex-1">
+        <section class="relative overflow-hidden" data-parallax-hero>
+        <div class="pointer-events-none absolute inset-0">
+            <div data-parallax-layer="14" class="absolute top-10 right-[-6rem] h-96 w-96 rounded-full bg-brand-200/50 blur-3xl animate-drift"></div>
+            <div data-parallax-layer="22" class="absolute bottom-[-4rem] left-[-4rem] h-72 w-72 rounded-full bg-gold-400/25 blur-3xl animate-drift-reverse"></div>
+        </div>
+
+        <div class="container-page relative grid gap-16 py-28 sm:py-36 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10">
+            <div>
+                <p class="eyebrow" data-reveal data-reveal-delay="0">Onafhankelijke stichting voor medisch onderzoek</p>
+                <h1 class="mt-6 max-w-3xl font-serif text-4xl leading-[1.1] text-ink-950 sm:text-5xl lg:text-[3.4rem]" data-reveal data-reveal-delay="90">
+                    Medische innovatie vraagt om zorgvuldig, onafhankelijk onderzoek.
+                </h1>
+                <p class="prose-body mt-6 max-w-2xl text-lg" data-reveal data-reveal-delay="180">
+                    NovaMed Research Foundation versnelt de ontwikkeling van baanbrekende medische innovaties door onafhankelijk onderzoek uit te voeren naar regeneratieve geneeskunde, biofysische technologieën en gepersonaliseerde gezondheidszorg. Ons doel: inzichten die veilig, wetenschappelijk verantwoord en toegankelijk zijn voor toekomstige generaties.
+                </p>
+                <div class="mt-10 flex flex-wrap items-center gap-4" data-reveal data-reveal-delay="270">
+                    <a href="/onderzoek" class="btn-shine inline-flex items-center rounded-full bg-ink-950 px-6 py-3 text-sm font-semibold text-sand-50 transition hover:bg-brand-800">
+                        Ontdek ons onderzoek
+                    </a>
+                    <a href="/contact?type=donateur" class="inline-flex items-center rounded-full border border-ink-900/15 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:border-ink-900/30 hover:-translate-y-0.5">
+                        Steun de stichting
+                    </a>
+                </div>
+            </div>
+
+            <div data-parallax-layer="6" class="relative mx-auto aspect-[5/7] w-full max-w-[19rem] text-brand-500">
+                <svg
+    class="h-full w-full"
+    viewBox="0 0 400 560"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    data-reveal="fade"
+    data-reveal-delay="200"
+>
+    <defs>
+        <linearGradient id="hero-dna-a" x1="140" y1="40" x2="260" y2="520" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#7fbba9" />
+            <stop offset="1" stop-color="#1a5046" />
+        </linearGradient>
+        <linearGradient id="hero-dna-b" x1="260" y1="40" x2="140" y2="520" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#4e9c86" />
+            <stop offset="1" stop-color="#143631" />
+        </linearGradient>
+        <linearGradient id="hero-leaf" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#cfa96a" />
+            <stop offset="1" stop-color="#9c7a48" />
+        </linearGradient>
+        <filter id="hero-helix-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="22" />
+        </filter>
+    </defs>
+
+    <circle cx="200" cy="280" r="60" fill="#7fbba9" opacity="0.25" filter="url(#hero-helix-glow)" />
+
+    
+    <circle
+        cx="200" cy="280" r="188"
+        stroke="currentColor" stroke-width="1" stroke-dasharray="1 8" stroke-linecap="round"
+        class="text-brand-300 animate-spin-slow"
+        style="transform-origin:200px 280px"
+    />
+
+    
+    <path
+        d="M140,40 C200,100 200,100 260,160 C200,220 200,220 140,280 C200,340 200,340 260,400 C200,460 200,460 140,520"
+        stroke="url(#hero-dna-a)" stroke-width="4" stroke-linecap="round"
+        class="draw-path" style="--path-length:950"
+    />
+    <path
+        d="M260,40 C200,100 200,100 140,160 C200,220 200,220 260,280 C200,340 200,340 140,400 C200,460 200,460 260,520"
+        stroke="url(#hero-dna-b)" stroke-width="4" stroke-linecap="round" opacity="0.85"
+        class="draw-path" style="--path-length:950; --reveal-delay:150ms"
+    />
+
+    
+            <g data-reveal="scale" data-reveal-delay="500">
+            <line x1="140" y1="40" x2="260" y2="40" stroke="currentColor" stroke-width="1.5" class="text-gold-400/70" />
+            <circle cx="140" cy="40" r="6" fill="currentColor" class="text-brand-500" />
+            <circle cx="260" cy="40" r="6" fill="currentColor" class="text-gold-500" />
+        </g>
+            <g data-reveal="scale" data-reveal-delay="620">
+            <line x1="140" y1="160" x2="260" y2="160" stroke="currentColor" stroke-width="1.5" class="text-gold-400/70" />
+            <circle cx="140" cy="160" r="6" fill="currentColor" class="text-brand-500" />
+            <circle cx="260" cy="160" r="6" fill="currentColor" class="text-gold-500" />
+        </g>
+            <g data-reveal="scale" data-reveal-delay="740">
+            <line x1="140" y1="280" x2="260" y2="280" stroke="currentColor" stroke-width="1.5" class="text-gold-400/70" />
+            <circle cx="140" cy="280" r="6" fill="currentColor" class="text-brand-500" />
+            <circle cx="260" cy="280" r="6" fill="currentColor" class="text-gold-500" />
+        </g>
+            <g data-reveal="scale" data-reveal-delay="860">
+            <line x1="140" y1="400" x2="260" y2="400" stroke="currentColor" stroke-width="1.5" class="text-gold-400/70" />
+            <circle cx="140" cy="400" r="6" fill="currentColor" class="text-brand-500" />
+            <circle cx="260" cy="400" r="6" fill="currentColor" class="text-gold-500" />
+        </g>
+            <g data-reveal="scale" data-reveal-delay="980">
+            <line x1="140" y1="520" x2="260" y2="520" stroke="currentColor" stroke-width="1.5" class="text-gold-400/70" />
+            <circle cx="140" cy="520" r="6" fill="currentColor" class="text-brand-500" />
+            <circle cx="260" cy="520" r="6" fill="currentColor" class="text-gold-500" />
+        </g>
+    
+    
+    <g class="animate-float-y-slow" style="animation-delay:.2s">
+        <path d="M330,120 C356,116 362,92 350,72 C340,88 332,93 328,106 C326,111 328,116 330,120 Z" fill="url(#hero-leaf)" />
+    </g>
+    <g class="animate-float-y-slow" style="animation-delay:1s">
+        <path d="M62,460 C36,456 30,432 42,412 C52,428 60,433 64,446 C66,451 64,456 62,460 Z" fill="url(#hero-leaf)" />
+    </g>
+</svg>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="border-y border-ink-900/8 bg-white">
+        <div class="container-page grid grid-cols-2 gap-8 py-12 sm:grid-cols-4">
+            <div data-reveal data-reveal-delay="0">
+                <p class="font-serif text-3xl text-ink-950 tabular-nums"><span data-counter="5">0</span></p>
+                <p class="mt-1 text-sm text-ink-700">Onderzoeksgebieden</p>
+            </div>
+            <div data-reveal data-reveal-delay="90">
+                <p class="font-serif text-3xl text-ink-950 tabular-nums"><span data-counter="4">0</span></p>
+                <p class="mt-1 text-sm text-ink-700">Programmapijlers</p>
+            </div>
+            <div data-reveal data-reveal-delay="180">
+                <p class="font-serif text-3xl text-ink-950 tabular-nums"><span data-counter="6">0</span></p>
+                <p class="mt-1 text-sm text-ink-700">Kernwaarden</p>
+            </div>
+            <div data-reveal data-reveal-delay="270">
+                <p class="font-serif text-3xl text-ink-950 tabular-nums"><span data-counter="10" data-counter-suffix=" jr">0</span></p>
+                <p class="mt-1 text-sm text-ink-700">Ambitiehorizon</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-24">
+        <div class="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <div data-reveal="left">
+                <p class="eyebrow">Missie</p>
+                <h2 class="mt-4 font-serif text-2xl text-ink-950 sm:text-3xl">Onafhankelijk onderzoek dat generaties verder helpt</h2>
+                <p class="prose-body mt-4">
+                    Wij voeren onafhankelijk onderzoek uit naar regeneratieve geneeskunde, biofysische technologieën en gepersonaliseerde gezondheidszorg — gericht op inzichten die veilig, wetenschappelijk verantwoord en toegankelijk zijn.
+                </p>
+            </div>
+            <div data-reveal="right">
+                <p class="eyebrow">Visie</p>
+                <h2 class="mt-4 font-serif text-2xl text-ink-950 sm:text-3xl">De geneeskunde van de toekomst is multidisciplinair</h2>
+                <p class="prose-body mt-4">
+                    Wij geloven dat de geneeskunde van de toekomst ontstaat door het combineren van biologie, natuurkunde, technologie en data. NovaMed Research Foundation wil wereldwijd een toonaangevend onderzoekscentrum worden waar innovatieve ideeën zorgvuldig worden onderzocht — ongeacht of de uitkomst positief of negatief is.
+                </p>
+            </div>
+        </div>
+        <div class="container-page mt-8" data-reveal>
+            <a href="/over-ons" class="text-sm font-semibold text-brand-700 hover:text-brand-800">
+                Lees meer over onze missie en kernwaarden &rarr;
+            </a>
+        </div>
+    </section>
+
+    
+    <section class="relative overflow-hidden bg-white py-28 sm:py-32">
+        <div class="pointer-events-none absolute -left-24 top-8 h-72 w-72 rounded-full bg-brand-50 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-gold-50 opacity-70 blur-3xl"></div>
+
+        <div class="container-page relative">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <p class="eyebrow" data-reveal>Hoe wij werken</p>
+                    <h2 class="mt-4 max-w-xl font-serif text-4xl text-ink-950 sm:text-5xl" data-reveal data-reveal-delay="80">Vier pijlers, één missie</h2>
+                </div>
+                <p class="max-w-sm text-sm leading-relaxed text-ink-700" data-reveal data-reveal-delay="140">
+                    Onderzoek, financiering, samenwerking en kennisdeling komen samen in één doorlopende cyclus van vooruitgang.
+                </p>
+            </div>
+
+            <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div
+    class="group relative overflow-hidden rounded-3xl border border-ink-900/8 bg-white p-8 sm:p-9 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-brand-300/70 hover:shadow-[0_32px_70px_-32px_rgba(16,38,42,0.45)]" data-reveal="data-reveal" data-reveal-delay="0"
+>
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-brand-500 via-brand-400 to-gold-400 transition-transform duration-500 ease-out group-hover:scale-x-100"></div>
+    <div class="pointer-events-none absolute -top-12 -right-12 h-36 w-36 rounded-full bg-brand-100 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-80"></div>
+
+    <div class="relative flex items-start justify-between">
+                    <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 text-white shadow-[0_14px_30px_-16px_rgba(23,65,58,0.7)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-3">
+                <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 3h6" />
+    <path d="M10 3v6.6L4.8 18a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9.6V3" />
+    <path d="M7.5 14.5h9" />
+</svg>
+            </span>
+                <span class="font-serif text-4xl italic text-brand-100 transition-colors duration-500 group-hover:text-brand-200">01</span>
+    </div>
+
+    <h3 class="relative mt-7 text-balance font-serif text-xl leading-snug text-ink-950 sm:text-2xl" style="hyphens: auto;" lang="nl">Onderzoeksprogramma’s</h3>
+    <div class="relative mt-3 text-sm leading-relaxed text-ink-700">
+        Vrijwilligers nemen deel aan innovatieve onderzoeksprojecten waarin nieuwe technologieën worden geëvalueerd onder vooraf vastgestelde protocollen.
+    </div>
+</div>
+                <div
+    class="group relative overflow-hidden rounded-3xl border border-ink-900/8 bg-white p-8 sm:p-9 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-brand-300/70 hover:shadow-[0_32px_70px_-32px_rgba(16,38,42,0.45)]" data-reveal="data-reveal" data-reveal-delay="90"
+>
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-brand-500 via-brand-400 to-gold-400 transition-transform duration-500 ease-out group-hover:scale-x-100"></div>
+    <div class="pointer-events-none absolute -top-12 -right-12 h-36 w-36 rounded-full bg-brand-100 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-80"></div>
+
+    <div class="relative flex items-start justify-between">
+                    <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 text-white shadow-[0_14px_30px_-16px_rgba(23,65,58,0.7)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-3">
+                <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 20.5s-7.5-4.6-9.6-9A5.2 5.2 0 0 1 12 6.5 5.2 5.2 0 0 1 21.6 11.5c-2.1 4.4-9.6 9-9.6 9Z" />
+</svg>
+            </span>
+                <span class="font-serif text-4xl italic text-brand-100 transition-colors duration-500 group-hover:text-brand-200">02</span>
+    </div>
+
+    <h3 class="relative mt-7 text-balance font-serif text-xl leading-snug text-ink-950 sm:text-2xl" style="hyphens: auto;" lang="nl">Donateursprogramma</h3>
+    <div class="relative mt-3 text-sm leading-relaxed text-ink-700">
+        Vermogende particulieren, families en bedrijven ondersteunen het onderzoek financieel — voor apparatuur, onderzoekers, labwerk en publicatie.
+    </div>
+</div>
+                <div
+    class="group relative overflow-hidden rounded-3xl border border-ink-900/8 bg-white p-8 sm:p-9 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-brand-300/70 hover:shadow-[0_32px_70px_-32px_rgba(16,38,42,0.45)]" data-reveal="data-reveal" data-reveal-delay="180"
+>
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-brand-500 via-brand-400 to-gold-400 transition-transform duration-500 ease-out group-hover:scale-x-100"></div>
+    <div class="pointer-events-none absolute -top-12 -right-12 h-36 w-36 rounded-full bg-brand-100 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-80"></div>
+
+    <div class="relative flex items-start justify-between">
+                    <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 text-white shadow-[0_14px_30px_-16px_rgba(23,65,58,0.7)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-3">
+                <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+    <circle cx="9" cy="12" r="6.2" />
+    <circle cx="15" cy="12" r="6.2" />
+</svg>
+            </span>
+                <span class="font-serif text-4xl italic text-brand-100 transition-colors duration-500 group-hover:text-brand-200">03</span>
+    </div>
+
+    <h3 class="relative mt-7 text-balance font-serif text-xl leading-snug text-ink-950 sm:text-2xl" style="hyphens: auto;" lang="nl">Innovatiepartners</h3>
+    <div class="relative mt-3 text-sm leading-relaxed text-ink-700">
+        Samenwerking met universiteiten, artsen, ingenieurs en technologiebedrijven bij de ontwikkeling en evaluatie van nieuwe medische technologie.
+    </div>
+</div>
+                <div
+    class="group relative overflow-hidden rounded-3xl border border-ink-900/8 bg-white p-8 sm:p-9 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-brand-300/70 hover:shadow-[0_32px_70px_-32px_rgba(16,38,42,0.45)]" data-reveal="data-reveal" data-reveal-delay="270"
+>
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-brand-500 via-brand-400 to-gold-400 transition-transform duration-500 ease-out group-hover:scale-x-100"></div>
+    <div class="pointer-events-none absolute -top-12 -right-12 h-36 w-36 rounded-full bg-brand-100 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-80"></div>
+
+    <div class="relative flex items-start justify-between">
+                    <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 text-white shadow-[0_14px_30px_-16px_rgba(23,65,58,0.7)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-3">
+                <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M3 5.5c2-1 5-1 7 .5v13c-2-1.5-5-1.5-7-.5v-13Z" />
+    <path d="M21 5.5c-2-1-5-1-7 .5v13c2-1.5 5-1.5 7-.5v-13Z" />
+</svg>
+            </span>
+                <span class="font-serif text-4xl italic text-brand-100 transition-colors duration-500 group-hover:text-brand-200">04</span>
+    </div>
+
+    <h3 class="relative mt-7 text-balance font-serif text-xl leading-snug text-ink-950 sm:text-2xl" style="hyphens: auto;" lang="nl">Kenniscentrum</h3>
+    <div class="relative mt-3 text-sm leading-relaxed text-ink-700">
+        Publicatie van onderzoeksresultaten, conferenties, opleidingen en open wetenschappelijke samenwerking.
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="relative overflow-hidden py-28 sm:py-32">
+        <div class="pointer-events-none absolute left-1/2 top-0 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-gold-50 opacity-60 blur-3xl"></div>
+
+        <div class="container-page relative">
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="eyebrow" data-reveal>Waar wij voor staan</p>
+                <h2 class="mt-4 font-serif text-4xl text-ink-950 sm:text-5xl" data-reveal data-reveal-delay="80">Kernwaarden</h2>
+                <p class="prose-body mt-5 text-base" data-reveal data-reveal-delay="140">
+                    De principes die ieder onderzoek, elke samenwerking en elke beslissing sturen.
+                </p>
+            </div>
+            <div class="mt-14 flex flex-wrap justify-center gap-4">
+                <div class="group flex items-center gap-3 rounded-full border border-ink-900/10 bg-white px-6 py-3.5 shadow-[0_1px_2px_rgba(16,38,42,0.04)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-[0_20px_45px_-24px_rgba(184,147,90,0.6)]" data-reveal="scale" data-reveal-delay="0">
+    <span class="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+        <span class="absolute h-2.5 w-2.5 rounded-full bg-gold-400 opacity-0 blur-[4px] transition-opacity duration-500 group-hover:opacity-100"></span>
+        <span class="relative h-2 w-2 rounded-full bg-gradient-to-br from-gold-400 to-gold-600"></span>
+    </span>
+    <span class="text-[0.9rem] font-medium tracking-wide text-ink-900">Wetenschappelijke integriteit</span>
+</div>
+                <div class="group flex items-center gap-3 rounded-full border border-ink-900/10 bg-white px-6 py-3.5 shadow-[0_1px_2px_rgba(16,38,42,0.04)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-[0_20px_45px_-24px_rgba(184,147,90,0.6)]" data-reveal="scale" data-reveal-delay="60">
+    <span class="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+        <span class="absolute h-2.5 w-2.5 rounded-full bg-gold-400 opacity-0 blur-[4px] transition-opacity duration-500 group-hover:opacity-100"></span>
+        <span class="relative h-2 w-2 rounded-full bg-gradient-to-br from-gold-400 to-gold-600"></span>
+    </span>
+    <span class="text-[0.9rem] font-medium tracking-wide text-ink-900">Innovatie</span>
+</div>
+                <div class="group flex items-center gap-3 rounded-full border border-ink-900/10 bg-white px-6 py-3.5 shadow-[0_1px_2px_rgba(16,38,42,0.04)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-[0_20px_45px_-24px_rgba(184,147,90,0.6)]" data-reveal="scale" data-reveal-delay="120">
+    <span class="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+        <span class="absolute h-2.5 w-2.5 rounded-full bg-gold-400 opacity-0 blur-[4px] transition-opacity duration-500 group-hover:opacity-100"></span>
+        <span class="relative h-2 w-2 rounded-full bg-gradient-to-br from-gold-400 to-gold-600"></span>
+    </span>
+    <span class="text-[0.9rem] font-medium tracking-wide text-ink-900">Transparantie</span>
+</div>
+                <div class="group flex items-center gap-3 rounded-full border border-ink-900/10 bg-white px-6 py-3.5 shadow-[0_1px_2px_rgba(16,38,42,0.04)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-[0_20px_45px_-24px_rgba(184,147,90,0.6)]" data-reveal="scale" data-reveal-delay="180">
+    <span class="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+        <span class="absolute h-2.5 w-2.5 rounded-full bg-gold-400 opacity-0 blur-[4px] transition-opacity duration-500 group-hover:opacity-100"></span>
+        <span class="relative h-2 w-2 rounded-full bg-gradient-to-br from-gold-400 to-gold-600"></span>
+    </span>
+    <span class="text-[0.9rem] font-medium tracking-wide text-ink-900">Veiligheid van deelnemers</span>
+</div>
+                <div class="group flex items-center gap-3 rounded-full border border-ink-900/10 bg-white px-6 py-3.5 shadow-[0_1px_2px_rgba(16,38,42,0.04)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-[0_20px_45px_-24px_rgba(184,147,90,0.6)]" data-reveal="scale" data-reveal-delay="240">
+    <span class="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+        <span class="absolute h-2.5 w-2.5 rounded-full bg-gold-400 opacity-0 blur-[4px] transition-opacity duration-500 group-hover:opacity-100"></span>
+        <span class="relative h-2 w-2 rounded-full bg-gradient-to-br from-gold-400 to-gold-600"></span>
+    </span>
+    <span class="text-[0.9rem] font-medium tracking-wide text-ink-900">Respect voor de mens</span>
+</div>
+                <div class="group flex items-center gap-3 rounded-full border border-ink-900/10 bg-white px-6 py-3.5 shadow-[0_1px_2px_rgba(16,38,42,0.04)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-[0_20px_45px_-24px_rgba(184,147,90,0.6)]" data-reveal="scale" data-reveal-delay="300">
+    <span class="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+        <span class="absolute h-2.5 w-2.5 rounded-full bg-gold-400 opacity-0 blur-[4px] transition-opacity duration-500 group-hover:opacity-100"></span>
+        <span class="relative h-2 w-2 rounded-full bg-gradient-to-br from-gold-400 to-gold-600"></span>
+    </span>
+    <span class="text-[0.9rem] font-medium tracking-wide text-ink-900">Onafhankelijkheid</span>
+</div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="bg-white py-24">
+        <div class="container-page">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <p class="eyebrow" data-reveal>Onderzoeksgebieden</p>
+                    <h2 class="mt-4 max-w-xl font-serif text-3xl text-ink-950" data-reveal data-reveal-delay="80">Waar wij onderzoek naar doen</h2>
+                </div>
+                <a href="/onderzoek" class="text-sm font-semibold text-brand-700 hover:text-brand-800" data-reveal>
+                    Alle onderzoeksgebieden &rarr;
+                </a>
+            </div>
+
+            <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div
+    class="group rounded-2xl border border-ink-900/8 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-[0_24px_60px_-30px_rgba(16,38,42,0.4)]" data-reveal="data-reveal" data-reveal-delay="0"
+>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white">
+            <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+    <circle cx="8.5" cy="12.5" r="4.5" />
+    <circle cx="16.2" cy="8" r="2.3" />
+    <circle cx="16.2" cy="16.4" r="2.3" />
+</svg>
+        </span>
+        <h3 class="mt-5 font-serif text-xl text-ink-950">Regeneratieve geneeskunde</h3>
+    <p class="mt-3 text-sm leading-relaxed text-ink-700">
+        Onderzoek naar hoe het lichaam zichzelf herstelt en hoe dit proces ondersteund kan worden.
+    </p>
+            <ul class="mt-5 space-y-2 border-t border-ink-900/8 pt-5">
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Celherstel</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Weefselregeneratie</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Herstelprocessen</span>
+                </li>
+                    </ul>
+    </div>
+                <div
+    class="group rounded-2xl border border-ink-900/8 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-[0_24px_60px_-30px_rgba(16,38,42,0.4)]" data-reveal="data-reveal" data-reveal-delay="90"
+>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white">
+            <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="3.2" />
+    <path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7M18.4 18.4l-1.7-1.7M7.3 7.3 5.6 5.6" />
+</svg>
+        </span>
+        <h3 class="mt-5 font-serif text-xl text-ink-950">Lichttherapie</h3>
+    <p class="mt-3 text-sm leading-relaxed text-ink-700">
+        Studie naar de effecten van licht op cellulair niveau.
+    </p>
+            <ul class="mt-5 space-y-2 border-t border-ink-900/8 pt-5">
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Fotobiomodulatie</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Verschillende golflengten</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Invloed op cellulaire processen</span>
+                </li>
+                    </ul>
+    </div>
+                <div
+    class="group rounded-2xl border border-ink-900/8 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-[0_24px_60px_-30px_rgba(16,38,42,0.4)]" data-reveal="data-reveal" data-reveal-delay="180"
+>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white">
+            <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2.5 12h4l2-6 3 12 2-9 1.5 3h6.5" />
+</svg>
+        </span>
+        <h3 class="mt-5 font-serif text-xl text-ink-950">Biofysische stimulatie</h3>
+    <p class="mt-3 text-sm leading-relaxed text-ink-700">
+        Onderzoek naar de wisselwerking tussen fysieke energie en het lichaam.
+    </p>
+            <ul class="mt-5 space-y-2 border-t border-ink-900/8 pt-5">
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Interacties tussen fysieke energie en biologische systemen</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Effecten op herstel en welzijn</span>
+                </li>
+                    </ul>
+    </div>
+                <div
+    class="group rounded-2xl border border-ink-900/8 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-[0_24px_60px_-30px_rgba(16,38,42,0.4)]" data-reveal="data-reveal" data-reveal-delay="270"
+>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white">
+            <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+    <path d="M7.4 7.1 10.4 10.4M16.6 7.1 13.6 10.4M7.4 16.9 10.4 13.6M16.6 16.9 13.6 13.6" />
+    <circle cx="6" cy="6" r="1.6" fill="currentColor" stroke="none" />
+    <circle cx="18" cy="6" r="1.6" fill="currentColor" stroke="none" />
+    <circle cx="6" cy="18" r="1.6" fill="currentColor" stroke="none" />
+    <circle cx="18" cy="18" r="1.6" fill="currentColor" stroke="none" />
+    <circle cx="12" cy="12" r="2.1" />
+</svg>
+        </span>
+        <h3 class="mt-5 font-serif text-xl text-ink-950">Gepersonaliseerde gezondheidszorg</h3>
+    <p class="mt-3 text-sm leading-relaxed text-ink-700">
+        Onderzoek naar op maat gemaakte inzichten op basis van individuele data.
+    </p>
+            <ul class="mt-5 space-y-2 border-t border-ink-900/8 pt-5">
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>AI</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Biomarkers</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Individuele behandelstrategieën</span>
+                </li>
+                    </ul>
+    </div>
+                <div
+    class="group rounded-2xl border border-ink-900/8 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-[0_24px_60px_-30px_rgba(16,38,42,0.4)]" data-reveal="data-reveal" data-reveal-delay="360"
+>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors duration-500 group-hover:bg-brand-600 group-hover:text-white">
+            <svg class="h-6 w-6 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 20c8 0 13-5 13-13 0-.6 0-1.3-.1-2C9 5.5 4 10 4 18v2Z" />
+    <path d="M4 20c3-4 6.5-7 12.5-12.5" />
+</svg>
+        </span>
+        <h3 class="mt-5 font-serif text-xl text-ink-950">Leefstijlinterventies</h3>
+    <p class="mt-3 text-sm leading-relaxed text-ink-700">
+        Studie naar de invloed van leefstijl op gezondheid en herstel.
+    </p>
+            <ul class="mt-5 space-y-2 border-t border-ink-900/8 pt-5">
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Voeding</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Beweging</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Slaap</span>
+                </li>
+                            <li class="flex items-start gap-2 text-sm text-ink-700">
+                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                    <span>Stressmanagement</span>
+                </li>
+                    </ul>
+    </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-24">
+        <div class="container-page" data-reveal="scale">
+            <div class="rounded-2xl border border-gold-500/30 bg-gold-500/8 p-8">
+    <div class="flex items-start gap-4">
+        <span class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-500/20 text-gold-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+            </svg>
+        </span>
+        <div>
+            <h3 class="font-serif text-lg text-ink-950">Experimenteel karakter van ons onderzoek</h3>
+            <div class="prose-body mt-2 text-sm">
+                <p>
+                    NovaMed Research Foundation onderzoekt onderwerpen zonder vooraf te stellen dat ze werken. Onderzochte methoden zijn geen bewezen behandelingen en worden nooit als zodanig gepresenteerd. Deelname vindt plaats volgens vastgestelde protocollen, met ethische toetsing, geïnformeerde toestemming en aandacht voor veiligheid.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-ink-950">
+    <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl animate-drift"></div>
+        <div class="absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-gold-500/20 blur-3xl animate-drift-reverse"></div>
+    </div>
+
+    <div class="container-page relative py-20 text-center" data-reveal="fade">
+                    <p class="eyebrow !text-brand-300">Doe mee</p>
+                <h2 class="mx-auto mt-4 max-w-2xl font-serif text-3xl text-sand-50 sm:text-4xl">Wilt u deelnemen, doneren of samenwerken?</h2>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="/contact?type=vrijwilliger" class="btn-shine inline-flex items-center rounded-full bg-sand-50 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-brand-100">
+            Deelnemen aan onderzoek
+        </a>
+        <a href="/contact?type=donateur" class="inline-flex items-center rounded-full border border-sand-50/30 px-6 py-3 text-sm font-semibold text-sand-50 transition hover:border-sand-50/60">
+            Doneren
+        </a>
+        <a href="/contact?type=partner" class="inline-flex items-center rounded-full border border-sand-50/30 px-6 py-3 text-sm font-semibold text-sand-50 transition hover:border-sand-50/60">
+            Innovatiepartner worden
+        </a>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="relative overflow-hidden border-t border-ink-900/10 bg-ink-950 text-sand-100">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/60 to-transparent"></div>
+
+    <div class="container-page grid gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div>
+            <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-sand-50 text-ink-950">
+                    <svg class="h-4 w-4 h-6 w-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+        <linearGradient id="brandmark-dna" x1="10" y1="14" x2="46" y2="70" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#7fbba9" />
+            <stop offset="1" stop-color="#206455" />
+        </linearGradient>
+        <linearGradient id="brandmark-leaf" x1="48" y1="34" x2="88" y2="88" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#cfa96a" />
+            <stop offset="1" stop-color="#9c7a48" />
+        </linearGradient>
+    </defs>
+
+    
+    <path d="M22,15 Q35,29 22,43 Q9,57 22,71" stroke="url(#brandmark-dna)" stroke-width="3.8" stroke-linecap="round" />
+    <path d="M36,15 Q23,29 36,43 Q49,57 36,71" stroke="url(#brandmark-dna)" stroke-width="3.8" stroke-linecap="round" opacity="0.8" />
+    <line x1="22" y1="15" x2="36" y2="15" stroke="#fbf9f4" stroke-width="2.4" stroke-linecap="round" />
+    <line x1="22" y1="43" x2="36" y2="43" stroke="#fbf9f4" stroke-width="2.4" stroke-linecap="round" />
+    <line x1="22" y1="71" x2="36" y2="71" stroke="#fbf9f4" stroke-width="2.4" stroke-linecap="round" />
+
+    
+    <path
+        d="M56,86 C82,83 89,57 76,36 C65,53 56,59 51,73 C49,79 52,83 56,86 Z"
+        fill="url(#brandmark-leaf)"
+    />
+    <path d="M76,36 C65,53 56,59 51,73" stroke="#fbf9f4" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round" fill="none" />
+
+    
+    <text x="50" y="66" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="42" fill="currentColor">N</text>
+</svg>
+                </span>
+                <span class="font-serif text-lg font-medium text-sand-50">NovaMed Research Foundation</span>
+            </div>
+            <p class="mt-4 max-w-sm text-sm leading-relaxed text-sand-100/70">
+                Onafhankelijk onderzoek naar regeneratieve geneeskunde, biofysische technologieën en gepersonaliseerde gezondheidszorg — met wetenschappelijke integriteit als uitgangspunt.
+            </p>
+        </div>
+
+        <div>
+            <p class="text-xs font-semibold tracking-[0.18em] text-sand-100/50 uppercase">Navigatie</p>
+            <ul class="mt-4 space-y-3 text-sm text-sand-100/80">
+                <li><a href="/over-ons" class="hover:text-sand-50">Over ons</a></li>
+                <li><a href="/onderzoek" class="hover:text-sand-50">Onderzoek</a></li>
+                <li><a href="/toekomst" class="hover:text-sand-50">Toekomst</a></li>
+                <li><a href="/contact" class="hover:text-sand-50">Contact</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <p class="text-xs font-semibold tracking-[0.18em] text-sand-100/50 uppercase">Betrokken raken</p>
+            <ul class="mt-4 space-y-3 text-sm text-sand-100/80">
+                <li><a href="/contact?type=vrijwilliger" class="hover:text-sand-50">Deelnemen aan onderzoek</a></li>
+                <li><a href="/contact?type=donateur" class="hover:text-sand-50">Doneren</a></li>
+                <li><a href="/contact?type=partner" class="hover:text-sand-50">Innovatiepartner worden</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <p class="text-xs font-semibold tracking-[0.18em] text-sand-100/50 uppercase">Contact</p>
+            <ul class="mt-4 space-y-3 text-sm text-sand-100/80">
+                <li><a href="mailto:info@novamedresearch.org" class="hover:text-sand-50">info@novamedresearch.org</a></li>
+                <li>Nederland</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="border-t border-sand-50/10">
+        <div class="container-page py-6">
+            <p class="text-xs leading-relaxed text-sand-100/50">
+                NovaMed Research Foundation voert experimenteel, wetenschappelijk onderzoek uit. Onderzochte methoden zijn geen bewezen behandelingen en worden nooit als zodanig gepresenteerd. Deelname aan onderzoeksprogramma&rsquo;s vindt plaats op basis van vooraf vastgestelde protocollen, ethische toetsing en geïnformeerde toestemming.
+            </p>
+            <p class="mt-3 text-xs text-sand-100/40">
+                &copy; 2026 NovaMed Research Foundation. Alle rechten voorbehouden.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
